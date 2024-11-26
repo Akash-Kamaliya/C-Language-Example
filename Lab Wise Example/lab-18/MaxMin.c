@@ -1,4 +1,4 @@
-/*2. Find maximum and minimum between two numbers using function.*/
+    /*2. Find maximum and minimum between two numbers using function.*/
 #include <stdio.h>
 int sum(int n, int m);
 int main()

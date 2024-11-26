@@ -3,7 +3,8 @@ time_t datatype.]*/
 #include <stdio.h>
 #include <time.h>
 
-int main() {
+int main()
+{
     // Get the current time
     time_t ct;
     time(&ct);

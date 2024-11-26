@@ -4,36 +4,36 @@ choice using switch.*/
 
 int main()
 {
-float x, y ;
-int z;
+  float x, y;
+  int z;
 
-printf("Enter Your First Number:\n");
-scanf("%f",&x);
-printf("Enter Your Second Number :\n");
-scanf("%f",&y);
-printf("Enter 1 to Addition :\n");
-printf("Enter 2 to Subtract :\n");
-printf("Enter 3 to Multiplication :\n");
-printf("Enter 4 to Divide :\n");
-scanf("%d",&z);
+  printf("Enter Your First Number:\n");
+  scanf("%f", &x);
+  printf("Enter Your Second Number :\n");
+  scanf("%f", &y);
+  printf("Enter 1 to Addition :\n");
+  printf("Enter 2 to Subtract :\n");
+  printf("Enter 3 to Multiplication :\n");
+  printf("Enter 4 to Divide :\n");
+  scanf("%d", &z);
 
-switch (z)
-{
-case 1 :
-printf("Ansewr is :%f",x+y);
-  break;
-case 2:
-printf("Ansewr is :%f",x-y);
-  break;
+  switch (z)
+  {
+  case 1:
+    printf("Ansewr is :%f", x + y);
+    break;
+  case 2:
+    printf("Ansewr is :%f", x - y);
+    break;
   case 3:
-printf("Ansewr is :%f",x*y);
-  break;
+    printf("Ansewr is :%f", x * y);
+    break;
   case 4:
-printf("Ansewr is :%f",x/y);
-  break;
-default:
-printf("Please Type valied number:\n");
-  break;
-}
-return 0;
+    printf("Ansewr is :%f", x / y);
+    break;
+  default:
+    printf("Please Type valied number:\n");
+    break;
+  }
+  return 0;
 }

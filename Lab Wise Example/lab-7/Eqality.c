@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 int main()
-{   
-  int a,b;
+{
+  int a, b;
   printf("Enter a number :\n");
-  scanf("%d",&a);
+  scanf("%d", &a);
   printf("Enter a number :\n");
-  scanf("%d",&b);
-  (a^b)==0?printf("Equal:\n"):printf("Not Equal:\n");
+  scanf("%d", &b);
+  (a ^ b) == 0 ? printf("Equal:\n") : printf("Not Equal:\n");
   return 0;
 }

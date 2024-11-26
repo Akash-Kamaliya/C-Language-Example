@@ -1,17 +1,17 @@
 /*4. Find factorial of the given number.*/
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
-  int num , i ,fact ;
+  int num, i, fact;
   printf("Enter a number :\n");
-  scanf("%d",&num);
+  scanf("%d", &num);
   fact = i = 1;
-  while(i<=num)
+  while (i <= num)
   {
-    fact = fact *i;
+    fact = fact * i;
     i++;
   }
-  printf("Factorial value of %d = %d",num , fact);
+  printf("Factorial value of %d = %d", num, fact);
   return 0;
 }

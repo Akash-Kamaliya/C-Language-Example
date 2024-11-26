@@ -10,6 +10,6 @@ int main()
   {
     printf("%d\n", i);
     i++;
-  }while (i <= n);
+  } while (i <= n);
   return 0;
 }

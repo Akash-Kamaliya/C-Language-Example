@@ -1,15 +1,15 @@
 /*2. Calculate average of three numbers.*/
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
-  float a , b , c ;
+  float a, b, c;
   printf("Enter a Number:\n");
-  scanf("%f",&a);
+  scanf("%f", &a);
   printf("Enter b Number:\n");
-  scanf("%f",&b);
+  scanf("%f", &b);
   printf("Enter c Number:\n");
-  scanf("%f",&c);
-  printf("Average of Three Number is :%f",(a+b+c)/3.0);
+  scanf("%f", &c);
+  printf("Average of Three Number is :%f", (a + b + c) / 3.0);
   return 0;
 }

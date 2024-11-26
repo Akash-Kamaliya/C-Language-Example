@@ -3,7 +3,7 @@
 
 int main()
 {
-  int n, i, j,sm, count = 0;
+  int n, i, j, sm, count = 0;
   printf("Enter the size of the array: ");
   scanf("%d", &n);
   int arr[n];
@@ -19,7 +19,7 @@ int main()
       if (arr[i] == arr[j])
       {
         count++;
-        sm=arr[i];
+        sm = arr[i];
         break;
       }
     }

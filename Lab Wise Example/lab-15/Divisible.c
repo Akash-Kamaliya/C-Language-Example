@@ -3,7 +3,7 @@
 
 int main()
 {
-  int arr[5], i, n = 0,n1;
+  int arr[5], i, n = 0, n1;
   printf("Enter Five element in Array :\n");
   for (i = 0; i < 5; i++)
   {
@@ -12,11 +12,11 @@ int main()
   }
   for (i = 0; i < 5; i++)
   {
-    if (arr[i]%3==0)
+    if (arr[i] % 3 == 0)
     {
       n++;
     }
   }
-  printf("Count of 3 divisible number is: %d",n);
+  printf("Count of 3 divisible number is: %d", n);
   return 0;
 }

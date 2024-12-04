@@ -1,15 +1,19 @@
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
+#include<stdio.h>
 
 int main()
 {
-
-    char s[100];
-    fgets(s, 100, stdin);
-    printf("Hello World!\n");
-    fputs(s,stdout);
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int n,i,j;
+    scanf("%d",&n);
+    for(i=0;i!=(2*n)-1;i++)
+    {
+    for(j=0;j!=(2*n)-1;j++)
+    {
+        if(n>i)
+        printf("%d",n-i);
+        else
+        printf("%d",i-n+2);
+    }   
+    printf("\n");
+    }
     return 0;
 }

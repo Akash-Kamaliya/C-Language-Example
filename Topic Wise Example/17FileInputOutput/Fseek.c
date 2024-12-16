@@ -29,7 +29,7 @@ int main()
         {
             printf("\nEnter new name, age & basic salary: ");
             scanf("%s %d %f", e.name, &e.age, &e.bs);
-            fseek(fp, -recsize, SEEK_CUR);
+            fseek(fp,-recsize,SEEK_CUR);
             fwrite(&e, recsize, 1, fp);
             printf("\nRecord updated successfully.\n");
             break;

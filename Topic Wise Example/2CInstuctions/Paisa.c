@@ -2,29 +2,15 @@
 but our Pocket is Small so We Calculate Smallest number of note of Given Amount*/
 #include<stdio.h>
 
-int main()
-{
-  int amount , nohun , nofifty , noten , nofive , notwo , noone , totle ;
-  
+int main(){
+  int amount , noOfNotes = 0  ;
   printf("Enter THe Amount :\n");
   scanf("%d",&amount);
-  nohun = amount/100;
-  amount%=100;
-  nofifty = amount/50;
-  amount%=50;
-  noten = amount/10;
-  amount%=10;
-  nofive = amount/5;
-  amount%=5;
-  notwo = amount/2;
-  amount%=2;
-  noone = amount/1;
-  amount%=1;
 
-totle = nohun + nofifty +  noten +  nofive +  notwo + noone ;
-
-printf("Smallest Number of Notes is :%d\n", totle);
-
-return 0;
-
+  for(int i = 100 ; i != 0; i = i /2 ){
+    noOfNotes += amount / i ;
+    amount = amount % i ;
+  }
+  printf("Number of notes = %d\n" , noOfNotes );
+  return 0;
 }

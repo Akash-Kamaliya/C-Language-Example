@@ -9,7 +9,7 @@ int main()
   printf("Which number's frequency you want to find ?:");
   scanf("%d", &num);
   n1 = n;
-  for (; n != 0;)
+  while(n != 0)
   {
     r = n % 10;
     n = n / 10;
@@ -18,6 +18,6 @@ int main()
       count++;
     }
   }
-  printf("frequncy of %d in %d number is %d :\n", num, n1, count);
+  printf("frequncy of %d in %d number is : %d \n", num, n1, count);
   return 0;
 }

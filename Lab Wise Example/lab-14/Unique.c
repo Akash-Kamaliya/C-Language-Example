@@ -1,6 +1,6 @@
-/*3. Given an integer array nums sorted in non-decreasing order, remove the duplicates inplace
+/*3. Given an integer array arr[] sorted in non-decreasing order, remove the duplicates inplace
 such that each unique element appears only once. The relative order of the elements
-should be kept the same. Then return the number of unique elements in nums.*/
+should be kept the same. Then return the number of unique elements in arr[].*/
 #include <stdio.h>
 
 int main()
@@ -8,11 +8,11 @@ int main()
   int n;
   printf("Enter the size of the array: ");
   scanf("%d", &n);
-  int nums[n];
+  int arr[n];
   printf("Enter %d elements in non-decreasing order: \n", n);
   for (int i = 0; i < n; i++)
   {
-    scanf("%d", &nums[i]);
+    scanf("%d", &arr[i]);
   }
   if (n == 0)
   {
@@ -22,10 +22,10 @@ int main()
   int j = 0;
   for (int i = 1; i < n; i++)
   {
-    if (nums[i] != nums[j])
+    if (arr[i] != arr[j])
     {
       j++;
-      nums[j] = nums[i];
+      arr[j] = arr[i];
     }
   }
   int k = j + 1;
@@ -33,7 +33,7 @@ int main()
   printf("Array after removing duplicates: ");
   for (int i = 0; i < k; i++)
   {
-    printf("%d ", nums[i]);
+    printf("%d ", arr[i]);
   }
   printf("\n");
   return 0;

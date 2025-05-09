@@ -30,6 +30,7 @@ void processFile(const char *inputFile, const char *outputFile)
     fclose(inFile);
     fclose(outFile);
     printf("File processed successfully.\n");
+    printf("%d",lineCount);
 }
 
 int main()

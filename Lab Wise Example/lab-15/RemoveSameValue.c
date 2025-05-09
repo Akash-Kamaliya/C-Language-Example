@@ -5,7 +5,7 @@ nums which are not equal to val.*/
 
 int main()
 {
-  int nums[] = {3, 2, 2, 3, 4, 3, 5};
+  int nums[] = {3, 1, 2, 3, 4, 3, 5};
   int val = 3;
   int n = sizeof(nums) / sizeof(nums[0]);
   int i, j = 0;

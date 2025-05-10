@@ -2,7 +2,6 @@
 void main()
 {
     int x = 5;
-    if (true)
-        ;
+    if (true);
     printf("hello");
 }

@@ -4,15 +4,15 @@ int main()
 {
   int avg, sum = 0;
   int i;
-  int marks[5]; /*array declaration*/
+  int marks[5];
   for (i = 0; i <= 4; i++)
   {
     printf("Enter marks : ");
-    scanf("%d", &marks[i]); /*store data in array */
+    scanf("%d", &marks[i]);
   }
   for (i = 0; i <= 4; i++)
   {
-    sum = sum + marks[i]; /*read data from an array*/
+    sum = sum + marks[i];
   }
   avg = sum / 5;
   printf("Average marks=%d\n", avg);

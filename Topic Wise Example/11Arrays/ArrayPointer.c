@@ -4,11 +4,11 @@ int main()
 {
     int num[] = {24, 34, 12, 44, 56, 17};
     int i, *ptr;
-    ptr = &num[0]; // assign address of zeroth element
+    ptr = &num[0];
     for (i = 0; i <= 5; i++)
     {
         printf("Address = %u element = %d\n", ptr, *ptr);
-        ptr++; // increment pointer to point to next integer
+        ptr++;
     }
     return 0;
 }

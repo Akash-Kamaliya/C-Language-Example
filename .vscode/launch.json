@@ -2,15 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/s/OneDrive/Documents/C example",
-      "program": "c:/Users/s/OneDrive/Documents/C example/build/Debug/outDebug",
+      "cwd": "d:/Akash/C example/Lab Wise Example/lab-20",
+      "program": "d:/Akash/C example/Lab Wise Example/lab-20/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
@@ -18,7 +17,6 @@
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
-          
         }
       ]
     }

@@ -3,43 +3,43 @@
 #include <stdlib.h>
 
 struct Node {
-    int data;
-    struct Node* next;
+    int info;
+    struct Node* link;
 };
 
-struct Node* createNode(int data) {
+struct Node* createNode(int info) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    newNode->data = data;
-    newNode->next = NULL;
+    newNode->info = info;
+    newNode->link = NULL;
     return newNode;
 }
 
-void insertEnd(struct Node** head, int data) {
-    struct Node* newNode = createNode(data);
-    if (*head == NULL) {
-        *head = newNode;
+void insertEnd(struct Node** First, int info) {
+    struct Node* newNode = createNode(info);
+    if (*First == NULL) {
+        *First = newNode;
         return;
     }
-    struct Node* temp = *head;
-    while (temp->next != NULL)
-        temp = temp->next;
-    temp->next = newNode;
+    struct Node* temp = *First;
+    while (temp->link != NULL)
+        temp = temp->link;
+    temp->link = newNode;
 }
 
-int areSame(struct Node* head1, struct Node* head2) {
-    while (head1 != NULL && head2 != NULL) {
-        if (head1->data != head2->data)
+int areSame(struct Node* First1, struct Node* First2) {
+    while (First1 != NULL && First2 != NULL) {
+        if (First1->info != First2->info)
             return 0;
-        head1 = head1->next;
-        head2 = head2->next;
+        First1 = First1->link;
+        First2 = First2->link;
     }
-    if (head1 == NULL && head2 == NULL)
+    if (First1 == NULL && First2 == NULL)
         return 1;
     return 0;
 }
 int main() {
-    struct Node* head1 = NULL;
-    struct Node* head2 = NULL;
+    struct Node* First1 = NULL;
+    struct Node* First2 = NULL;
     int n1, n2, val, i;
 
     printf("Enter number of elements in first list: ");
@@ -47,7 +47,7 @@ int main() {
     printf("Enter elements of first list:\n");
     for (i = 0; i < n1; i++) {
         scanf("%d", &val);
-        insertEnd(&head1, val);
+        insertEnd(&First1, val);
     }
 
     printf("Enter number of elements in second list: ");
@@ -55,10 +55,10 @@ int main() {
     printf("Enter elements of second list:\n");
     for (i = 0; i < n2; i++) {
         scanf("%d", &val);
-        insertEnd(&head2, val);
+        insertEnd(&First2, val);
     }
 
-    if (areSame(head1, head2))
+    if (areSame(First1, First2))
         printf("Both linked lists are same.\n");
     else
         printf("Linked lists are not same.\n");

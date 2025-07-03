@@ -2,84 +2,84 @@
 #include <stdlib.h>
 
 struct Node {
-    int data;
-    struct Node *next;
+    int info;
+    struct Node *link;
 };
 
-struct Node *head = NULL;
+struct Node *First = NULL;
 
 void insertAtFront(int value) {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    newNode->data = value;
-    newNode->next = head;
-    head = newNode;
+    newNode->info = value;
+    newNode->link = First;
+    First = newNode;
     printf("Inserted %d at front.\n", value);
 }
 
 void display() {
-    if (head == NULL) {
+    if (First == NULL) {
         printf("List is empty.\n");
         return;
     }
-    struct Node *temp = head;
+    struct Node *temp = First;
     printf("Linked List: ");
     while (temp != NULL) {
-        printf("%d -> ", temp->data);
-        temp = temp->next;
+        printf("%d -> ", temp->info);
+        temp = temp->link;
     }
     printf("NULL\n");
 }
 
 void deleteFirst() {
-    if (head == NULL) {
+    if (First == NULL) {
         printf("List is empty.\n");
         return;
     }
-    struct Node *temp = head;
-    head = head->next;
-    printf("Deleted node with value %d from front.\n", temp->data);
+    struct Node *temp = First;
+    First = First->link;
+    printf("Deleted node with value %d from front.\n", temp->info);
     free(temp);
 }
 
 void insertAtEnd(int value) {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    newNode->data = value;
-    newNode->next = NULL;
+    newNode->info = value;
+    newNode->link = NULL;
 
-    if (head == NULL) {
-        head = newNode;
+    if (First == NULL) {
+        First = newNode;
     } else {
-        struct Node *temp = head;
-        while (temp->next != NULL)
-            temp = temp->next;
-        temp->next = newNode;
+        struct Node *temp = First;
+        while (temp->link != NULL)
+            temp = temp->link;
+        temp->link = newNode;
     }
     printf("Inserted %d at end.\n", value);
 }
 
 void deleteLast() {
-    if (head == NULL) {
+    if (First == NULL) {
         printf("List is empty.\n");
         return;
     }
-    if (head->next == NULL) {
-        printf("Deleted node with value %d from end.\n", head->data);
-        free(head);
-        head = NULL;
+    if (First->link == NULL) {
+        printf("Deleted node with value %d from end.\n", First->info);
+        free(First);
+        First = NULL;
         return;
     }
 
-    struct Node *temp = head;
-    while (temp->next->next != NULL)
-        temp = temp->next;
+    struct Node *temp = First;
+    while (temp->link->link != NULL)
+        temp = temp->link;
 
-    printf("Deleted node with value %d from end.\n", temp->next->data);
-    free(temp->next);
-    temp->next = NULL;
+    printf("Deleted node with value %d from end.\n", temp->link->info);
+    free(temp->link);
+    temp->link = NULL;
 }
 
 void deleteFromPosition(int pos) {
-    if (head == NULL) {
+    if (First == NULL) {
         printf("List is empty.\n");
         return;
     }
@@ -89,28 +89,28 @@ void deleteFromPosition(int pos) {
         return;
     }
 
-    struct Node *temp = head;
-    for (int i = 1; i < pos - 1 && temp->next != NULL; i++) {
-        temp = temp->next;
+    struct Node *temp = First;
+    for (int i = 1; i < pos - 1 && temp->link != NULL; i++) {
+        temp = temp->link;
     }
 
-    if (temp->next == NULL) {
+    if (temp->link == NULL) {
         printf("Invalid position.\n");
         return;
     }
 
-    struct Node *delNode = temp->next;
-    temp->next = delNode->next;
-    printf("Deleted node with value %d from position %d.\n", delNode->data, pos);
+    struct Node *delNode = temp->link;
+    temp->link = delNode->link;
+    printf("Deleted node with value %d from position %d.\n", delNode->info, pos);
     free(delNode);
 }
 
 void countNodes() {
     int count = 0;
-    struct Node *temp = head;
+    struct Node *temp = First;
     while (temp != NULL) {
         count++;
-        temp = temp->next;
+        temp = temp->link;
     }
     printf("Total number of nodes: %d\n", count);
 }

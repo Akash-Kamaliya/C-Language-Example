@@ -3,30 +3,30 @@
 
 struct Node
 {
-    int data;
-    struct Node *next;
+    int info;
+    struct Node *link;
 };
 
 int main()
 {
-    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
 
-    if (node == NULL)
+    if (newNode == NULL)
     {
         printf("Memory allocation failed!\n");
         return 1;
     }
 
-    printf("Enter data for the node: ");
-    scanf("%d", &node->data);
+    printf("Enter info for the node: ");
+    scanf("%d", &newNode->info);
 
-    node->next = NULL;
+    newNode->link = NULL;
 
-    printf("\nNode data:\n");
-    printf("Data: %d\n", node->data);
-    printf("Next: %p\n", (void *)node->next);
+    printf("\nNode info:\n");
+    printf("info: %d\n", newNode->info);
+    printf("link: %p\n", (void *)newNode->link);
 
-    free(node);
+    free(newNode);
 
     return 0;
 }

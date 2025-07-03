@@ -5,73 +5,73 @@
 #include <stdlib.h>
 
 struct Node {
-    int data;
-    struct Node* next;
+    int info;
+    struct Node* link;
 };
 
-struct Node* newNode(int data) {
-    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
-    temp->data = data;
-    temp->next = NULL;
-    return temp;
+struct Node* newNode(int info) {
+    struct Node* save = (struct Node*)malloc(sizeof(struct Node));
+    save->info = info;
+    save->link = NULL;
+    return save;
 }
 
-void insertEnd(struct Node** head, int data) {
-    struct Node* temp = newNode(data);
-    if (*head == NULL) {
-        *head = temp;
+void insertEnd(struct Node** First, int info) {
+    struct Node* save = newNode(info);
+    if (*First == NULL) {
+        *First = save;
         return;
     }
-    struct Node* curr = *head;
-    while (curr->next != NULL)
-        curr = curr->next;
-    curr->next = temp;
+    struct Node* curr = *First;
+    while (curr->link != NULL)
+        curr = curr->link;
+    curr->link = save;
 }
 
-void printList(struct Node* head) {
-    while (head != NULL) {
-        printf("%d", head->data);
-        if (head->next != NULL)
+void printList(struct Node* First) {
+    while (First != NULL) {
+        printf("%d", First->info);
+        if (First->link != NULL)
             printf(" -> ");
-        head = head->next;
+        First = First->link;
     }
     printf("\n");
 }
 
-void removeDuplicates(struct Node* head) {
-    struct Node* curr = head;
-    while (curr != NULL && curr->next != NULL) {
-        if (curr->data == curr->next->data) {
-            struct Node* temp = curr->next;
-            curr->next = curr->next->next;
-            free(temp);
+void removeDuplicates(struct Node* First) {
+    struct Node* curr = First;
+    while (curr != NULL && curr->link != NULL) {
+        if (curr->info == curr->link->info) {
+            struct Node* save = curr->link;
+            curr->link = curr->link->link;
+            free(save);
         } else {
-            curr = curr->next;
+            curr = curr->link;
         }
     }
 }
 
 int main() {
-    struct Node* head = NULL;
+    struct Node* First = NULL;
     int arr[] = {1, 1, 6, 13, 13, 13, 27, 27};
     int n = sizeof(arr) / sizeof(arr[0]);
     for (int i = 0; i < n; i++)
-        insertEnd(&head, arr[i]);
+        insertEnd(&First, arr[i]);
 
     printf("Original List:\n");
-    printList(head);
+    printList(First);
 
-    removeDuplicates(head);
+    removeDuplicates(First);
 
     printf("List after removing duplicates:\n");
-    printList(head);
+    printList(First);
 
     // Free memory
-    struct Node* temp;
-    while (head != NULL) {
-        temp = head;
-        head = head->next;
-        free(temp);
+    struct Node* save;
+    while (First != NULL) {
+        save = First;
+        First = First->link;
+        free(save);
     }
     return 0;
 }

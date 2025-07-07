@@ -12,6 +12,7 @@ int main() {
     struct Student s1;
     struct Student *ptr = &s1;
 
+    
     printf("Enter student details:\n");
 
     printf("Roll No: ");

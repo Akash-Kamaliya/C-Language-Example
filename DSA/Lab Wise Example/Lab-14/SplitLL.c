@@ -51,6 +51,7 @@ void splitCircular(struct Node* First, struct Node** First1, struct Node** First
         fast = fast->link->link;
     }
 
+    
     if (fast->link->link == First)
         fast = fast->link;
 

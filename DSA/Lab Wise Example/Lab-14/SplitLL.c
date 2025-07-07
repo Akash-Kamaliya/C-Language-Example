@@ -39,7 +39,7 @@ void printList(struct Node* node) {
     printf("\n");
 }
 
-void splitCircular(struct Node* First, struct Node** First1_ref, struct Node** First2_ref) {
+void splitCircular(struct Node* First, struct Node** First1, struct Node** First2) {
     struct Node* slow = First;
     struct Node* fast = First;
 
@@ -54,12 +54,12 @@ void splitCircular(struct Node* First, struct Node** First1_ref, struct Node** F
     if (fast->link->link == First)
         fast = fast->link;
 
-    *First1_ref = First;
-    *First2_ref = slow->link;
+    *First1 = First;
+    *First2 = slow->link;
 
-    slow->link = *First1_ref;
+    slow->link = *First1;
 
-    fast->link = *First2_ref;
+    fast->link = *First2;
 }
 
 int main() {

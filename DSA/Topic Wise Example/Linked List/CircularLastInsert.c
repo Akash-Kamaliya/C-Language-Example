@@ -14,12 +14,12 @@ void insertAtEnd_Circular(int x) {
     newNode->info = x;
 
     if (first == NULL) {
-        newNode->link = newNode;  // Points to itself
+        newNode->link = newNode;
         first = last = newNode;
     } else {
-        newNode->link = first;    // New node points to first
-        last->link = newNode;     // Old last points to new
-        last = newNode;           // Update last
+        newNode->link = first; 
+        last->link = newNode;
+        last = newNode;
     }
 }
 void printCircularList() {

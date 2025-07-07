@@ -16,7 +16,7 @@ struct Node* copyList(struct Node *FIRST) {
 ///////////////////////////////////////////////////TO MAKE BEGIN NODE
     AVAIL = (struct Node *)malloc(sizeof(struct Node));
     if (AVAIL == NULL) {
-        printf("Underflow\n");
+        printf("Underflow\n");  
         return NULL;
     }
     NEW = AVAIL;
@@ -26,9 +26,7 @@ struct Node* copyList(struct Node *FIRST) {
 /////////////////////////////////////////////////TO COPY LL
     SAVE = FIRST;
 
-    // Step 4: Traverse the list and copy each node
     while (SAVE->link != NULL) {
-        // Step 5: Update predecessor and move SAVE to next
         PRED = NEW;
         SAVE = SAVE->link;
 
@@ -40,9 +38,9 @@ struct Node* copyList(struct Node *FIRST) {
 
         NEW = AVAIL;
         NEW->info = SAVE->info;
-        AVAIL = NULL;  // Mark AVAIL used
+        AVAIL = NULL;
 
-        PRED->link = NEW;  // Link previous node to new
+        PRED->link = NEW;
     }
 
     NEW->link = NULL;

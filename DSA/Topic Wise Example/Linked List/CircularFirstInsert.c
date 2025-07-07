@@ -13,7 +13,6 @@ void insertAtFirst_Circular(int x) {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->info = x;
 
-    // If list is empty
     if (first == NULL) {
         newNode->link = newNode;  // Self loop
         first = last = newNode;

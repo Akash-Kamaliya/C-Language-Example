@@ -13,14 +13,14 @@ void insertInOrder_Circular(int x) {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     newNode->info = x;
 
-    // Case 1: Empty list
+    // 1: Empty list
     if (first == NULL) {
         newNode->link = newNode;
         first = last = newNode;
         return;
     }
 
-    // Case 2: Insert before the first node
+    //2: Insert before the first node
     if (x <= first->info) {
         newNode->link = first;
         last->link = newNode;
@@ -28,7 +28,7 @@ void insertInOrder_Circular(int x) {
         return;
     }
 
-    // Case 3: Traverse to find the correct position
+    //3: Traverse to find the correct position
     struct Node *save = first;
     while (save != last && x >= save->link->info) {
         save = save->link;
@@ -38,7 +38,7 @@ void insertInOrder_Circular(int x) {
     newNode->link = save->link;
     save->link = newNode;
 
-    // Case 4: If inserted at the end, update last
+    //4: If inserted at the end, update last
     if (save == last) {
         last = newNode;
     }

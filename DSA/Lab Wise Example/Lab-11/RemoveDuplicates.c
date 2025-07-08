@@ -45,23 +45,25 @@ void printList(struct Node *First)
 void removeDuplicates(struct Node *First)
 {
     struct Node *curr1 = First;
-    struct Node *curr = NULL;
     while (curr1 != NULL && curr1->link != NULL)
     {
-        curr = curr1->link;
-        while (curr != NULL && curr->link != NULL)
+        struct Node *prev = curr1;
+        struct Node *curr2 = curr1->link;
+        while (curr2 != NULL)
         {
-            if (curr1->info == curr->info)
+            if (curr1->info == curr2->info)
             {
-                struct Node *save = curr;
-                curr1->link = curr->link;
-                free(save);
+                prev->link = curr2->link;
+                free(curr2);
+                curr2 = prev->link;
             }
             else
             {
-                curr = curr->link;
+                prev = curr2;
+                curr2 = curr2->link;
             }
         }
+        curr1 = curr1->link;
     }
 }
 

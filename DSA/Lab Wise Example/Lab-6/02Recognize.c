@@ -21,7 +21,7 @@ char pop() {
     return '\0';
 }
 
-bool isPalindrome(char str[]) {
+bool isRecognize(char str[]) {
     int len = strlen(str);
     int i;
 
@@ -48,14 +48,14 @@ int main() {
     char *strings[] = {"aca", "bcb", "abcba", "abbcbba"};
     int n = sizeof(strings) / sizeof(strings[0]);
 
-    printf("Checking palindrome using stack:\n\n");
+    printf("Checking Recognize using stack:\n\n");
     for (int i = 0; i < n; i++) {
         top = -1; 
         printf("String: %s => ", strings[i]);
-        if (isPalindrome(strings[i])) {
-            printf("(Palindrome)\n");
+        if (isRecognize(strings[i])) {
+            printf("(Recognize)\n");
         } else {
-            printf("(Not Palindrome)\n");
+            printf("(Not Recognize)\n");
         }
     }
     return 0;
